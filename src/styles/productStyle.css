@@ -19,12 +19,12 @@
 }
 
 .image-container{
-    height: 220px;
-    width: 220px;
-    justify-content: center;
+    height: 220px !important;
+    width: 220px !important;
+    justify-content: center !important;
+    margin: 0 !important;
     overflow: hidden;
     box-sizing: border-box;
-    padding: 10px;
 }
 
 .product-title{

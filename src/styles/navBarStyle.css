@@ -1,0 +1,9 @@
+.navbar-container{
+        position: fixed;
+        width: 100%;
+        top: 0;
+}
+
+.navbar-spacing{
+    height: 56px;
+}

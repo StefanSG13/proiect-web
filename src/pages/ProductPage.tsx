@@ -22,10 +22,10 @@ const ProductPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://localhost:44307/api/Book/get")
+      .get("https://localhost:44307/api/Book/get-all")
       .then((response: AxiosResponse) => {
         console.log(response.data);
-        const formattedData = response.data.result.map((item: any) => {
+        const formattedData = response.data.map((item: any) => {
           return {
             title: item.title,
             price: item.price,
