@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage.tsx";
 import ProductPage from "./pages/ProductPage.tsx";
 import SingleProductPage from "./pages/SingleProductPage.tsx";
+import Footer from "./commonComponents/Footer.tsx";
+import NavBar from "./commonComponents/NavBar.tsx";
 
 const router = createBrowserRouter([
   {
@@ -21,13 +23,17 @@ const router = createBrowserRouter([
     element: <ProductPage />,
   },
   {
-    path: "/single/:id",
+    path: "/produse/:id",
     element: <SingleProductPage />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <NavBar />
+    <div className="page-container">
+      <RouterProvider router={router} />
+    </div>
+    <Footer />
   </React.StrictMode>
 );

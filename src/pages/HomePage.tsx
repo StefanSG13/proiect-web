@@ -72,8 +72,6 @@ const HomePage = () => {
           price={6969}
         />
       </div>
-      <br />
-      <Footer />
     </div>
   );
 };

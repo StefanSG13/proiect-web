@@ -12,19 +12,19 @@ type ProductProp = {
 
 const Product = ({ title, price, image, id }: ProductProp) => {
   return (
-    <div className="product-container">
-      <div className="image-container">
+    <div className="css-is-cool">
+      <div className="product-container">
         <img className="product-image" src={image} alt={title} />
-      </div>
-      <div className="product-title">{title}</div>
-      <div className="price-container">
-        <div className="price">{price} LEI</div>
-        <a href={`https://localhost:5173/produse/${id}`}>
-          <Button className="product-button" variant="primary">
-            <FontAwesomeIcon icon={faCartShopping} />
-          </Button>
-        </a>
-        {""}
+        <div className="product-title">{title}</div>
+        <div className="price-container">
+          <div className="price">{price.toLocaleString()} LEI</div>
+          <a href={`http://localhost:5173/produse/${id}`}>
+            <Button className="product-button" variant="primary">
+              <FontAwesomeIcon icon={faCartShopping} />
+            </Button>
+          </a>
+          {""}
+        </div>
       </div>
     </div>
   );

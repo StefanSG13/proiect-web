@@ -1,7 +1,6 @@
 .products-section{
     width: 60%;
     flex-wrap: wrap;
-    gap: 10px;
 }
 
 .component-container{

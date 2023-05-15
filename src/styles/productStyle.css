@@ -1,52 +1,50 @@
 .product-container{
-    height: 290px;
-    width: 230px;
+    width: 100%;
     border: 1px solid #ccc; /* add a 1px solid border with color #ccc */
     background-color: #f9f9f9; /* add a light gray background color */
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* add a light shadow effect */
     border-radius: 10px;
-    padding: 10px;
 }
 
 .product-image{
-    max-height: 220px;
-    max-width: 220px;
-    height: auto;
-    width: 100%;
     object-fit: cover;
-    margin: -10px; /* add negative margin to counteract the padding */
-    border-radius: 10px;
-}
-
-.image-container{
-    height: 220px !important;
-    width: 220px !important;
-    justify-content: center !important;
-    margin: 0 !important;
+    border-radius: 20px;
     overflow: hidden;
-    box-sizing: border-box;
-}
+    width: 100%;
+    height: 200px !important;
+    padding: 10px;
+} 
 
 .product-title{
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 20px;
+    padding: 10px;
 }
 
 .price-container{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
+    padding: 10px;
 }
 
 .price{
-    position: absolute;
     bottom: 0;
     left: 0;
-    width: calc(100% - 50px); /* adjust width to make room for button */
 }
 
 .product-button{
-    position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.css-is-cool{
+    padding: 10px;
+    width: 20%;
+}
+
+.image-container{
+    box-sizing: border-box;
+    height: 50px;
 }

@@ -19,7 +19,6 @@ import {
 const Footer = () => {
   return (
     <div>
-      <div className="footer-spacing"></div>
       <MDBFooter
         className="text-center  footer-container"
         color="white"

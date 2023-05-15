@@ -25,6 +25,7 @@ a:hover {
 
 body {
   margin: 0;
+  min-height: calc(100vh - 152px - 56px) !important;
 }
 
 h1 {
@@ -65,4 +66,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.page-container{
+  min-height: calc(100vh - 152px - 56px) !important;
 }

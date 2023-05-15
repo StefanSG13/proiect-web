@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios, { AxiosResponse } from "axios";
-import "./../styles/singleProductPageStyle.css";
+import "./../styles/singleProductPageStyle.module.css";
 import NavBar from "../commonComponents/NavBar";
 import Footer from "../commonComponents/Footer";
 
@@ -21,7 +21,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://localhost:44307/api/Book/get?id=" + id)
+      .get(`https://localhost:44307/api/Book/get?id=${id}`)
       .then((response: AxiosResponse) => {
         console.log(response);
         const { title, price, image, id, author, description, publisher } =
@@ -46,7 +46,6 @@ const SingleProductPage = () => {
 
   return (
     <div>
-      <NavBar />
       <h1 className="product-title">{product?.title}</h1>
       <div className="product-section d-flex">
         <div className="image-container">
@@ -57,8 +56,10 @@ const SingleProductPage = () => {
           />
         </div>
         <div className="description-container">{product?.description}</div>
+        <div className="price-container">
+          <div className="p"></div>
+        </div>
       </div>
-      <Footer />
     </div>
   );
 };

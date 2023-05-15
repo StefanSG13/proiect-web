@@ -16,6 +16,7 @@ const NavBar = () => {
             <Nav.Link href="http://localhost:5173/home">Acasa</Nav.Link>
             <Nav.Link href="http://localhost:5173/produse">Produse</Nav.Link>
             <Nav.Link href="http://localhost:5173/contact">Contact</Nav.Link>
+            {false ? <div>123</div> : <div>456</div>}
           </Nav>
         </Container>
       </Navbar>
