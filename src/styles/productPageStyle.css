@@ -1,0 +1,46 @@
+.products-section{
+    width: 60%;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.component-container{
+    margin-top: 10px;
+}
+
+.filter-section{
+    width: 20%;
+    margin-left: 30px;
+}
+
+.filter-container{
+    border: 1px solid #524f4f21;
+    margin-top: 150px;
+    width: 200px;
+    margin-left: 10%;
+    border-radius: 15px;
+    position: relative;
+}
+
+.filter-header{
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.filter-option{
+    padding-left: 5px;
+    margin-left: 15px;
+}
+
+.hr{
+    background-color: rgb(153, 153, 153);
+    margin: 2%;
+    border-radius: 10px;
+    height: 2px;
+    width: auto;
+    margin-top: 5px;
+}
+
+.filter-slider{
+    width: 40% !important;
+}

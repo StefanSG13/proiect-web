@@ -1,0 +1,19 @@
+.slide-show{
+    height: 500px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.carousel-image{
+    object-fit: scale-down;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel{
+    height: 100%;
+}
+
+.carousel-item{
+    height: 500px;
+}

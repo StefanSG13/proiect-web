@@ -1,0 +1,8 @@
+.text {
+    color: red;
+}
+
+.nush-container {
+    display: flex;
+    gap: 10px;
+}

@@ -1,0 +1,11 @@
+.section-header{
+    margin-left: 12%;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.products-container{
+    display: flex;
+    gap: 10px;
+    margin-left: 12%;
+}
