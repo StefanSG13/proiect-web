@@ -13,7 +13,7 @@ import ShoppingCartPage from "./pages/ShoppingCartPage.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <HomePage />,
   },
   {
     path: "/home",

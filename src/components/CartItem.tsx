@@ -1,16 +1,14 @@
+import "./../styles/cartItemStyle.css";
+
 type ShoppingCartItem = {
-    id: number;
-    image: string;
-    title: string;
-    price: string;
-}
-
-const ShoppingCartPage = (product: ShoppingCartItem) => {
-    return (
-        <div>
-
-        </div>
-    );
+  id: number;
+  image: string;
+  title: string;
+  price: number;
 };
 
-export default ShoppingCartPage;
+const CartItem = (product: ShoppingCartItem) => {
+  return <div className="cart-item-container">{product.title}</div>;
+};
+
+export default CartItem;
