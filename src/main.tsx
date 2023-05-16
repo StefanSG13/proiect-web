@@ -8,6 +8,7 @@ import ProductPage from "./pages/ProductPage.tsx";
 import SingleProductPage from "./pages/SingleProductPage.tsx";
 import Footer from "./commonComponents/Footer.tsx";
 import NavBar from "./commonComponents/NavBar.tsx";
+import ShoppingCartPage from "./pages/ShoppingCartPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/produse/:id",
     element: <SingleProductPage />,
+  },
+  {
+    path: "/cos",
+    element: <ShoppingCartPage />,
   },
 ]);
 

@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios, { AxiosResponse } from "axios";
-import "./../styles/singleProductPageStyle.module.css";
-import NavBar from "../commonComponents/NavBar";
-import Footer from "../commonComponents/Footer";
+import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import "./../styles/singleProductPageStyle.css";
+
+type CartItem = {
+  id: number;
+  quantity: number;
+}
 
 type ProductDetailsProp = {
   title: string;
@@ -15,6 +21,31 @@ type ProductDetailsProp = {
   publisher: string;
 };
 
+function getCart() {
+  const cartString = localStorage.getItem('cart');
+  if (cartString !== null) {
+    return JSON.parse(cartString);
+  } else {
+    return [];
+  }
+}
+
+function addToCart(productId: number) {
+  let cart = getCart();
+  const existingCartItem = cart.find((item: CartItem) => item.id == productId)
+
+  if (existingCartItem) {
+    existingCartItem.quantity++;
+  }
+  else {
+    cart.push({ id: productId, quantity: 1 });
+  }
+
+  console.log(cart);
+  // Save the updated cart back to local storage
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
 const SingleProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<ProductDetailsProp>();
@@ -23,7 +54,6 @@ const SingleProductPage = () => {
     axios
       .get(`https://localhost:44307/api/Book/get?id=${id}`)
       .then((response: AxiosResponse) => {
-        console.log(response);
         const { title, price, image, id, author, description, publisher } =
           response.data;
         const formattedData: ProductDetailsProp = {
@@ -42,22 +72,31 @@ const SingleProductPage = () => {
       });
   }, []);
 
-  console.log(product);
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
-      <h1 className="product-title">{product?.title}</h1>
-      <div className="product-section d-flex">
-        <div className="image-container">
+      <div className="d-flex">
+        <h1 className="single-product-title">{product?.title}</h1>
+        <div className="single-product-author">
+          , {product?.author}
+        </div>
+      </div>
+      <br />
+      <div className="single-product-section d-flex">
+        <div className="single-product-image-container w-25">
           <img
-            className="product-image"
+            className="single-product-image"
             src={product?.image}
             alt={product?.title}
           />
         </div>
-        <div className="description-container">{product?.description}</div>
-        <div className="price-container">
-          <div className="p"></div>
+        <div className="single-product-description-container w-50">{product?.description}</div>
+        <div className="single-product-price-container w-25">
+          <div className="single-product-price">{product?.price} LEI</div>
+          <Button variant="warning" onClick={() => addToCart(product.id)}>Adauga in cos <FontAwesomeIcon icon={faCartShopping} /></Button>{' '}
         </div>
       </div>
     </div>
