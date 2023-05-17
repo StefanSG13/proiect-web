@@ -72,6 +72,7 @@ const ShoppingCartPage = () => {
           title={products[0].title}
           image={products[0].image}
           id={products[0].id}
+          quantity={products[0].quantity}
         />
       </div>
       <div className="grand-total"></div>
